@@ -3,9 +3,10 @@
 	<head>
 		<title>Assingment #5:CPU</title>
 		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<style>
 			body {
-				font-family: Verdana, Geniva, sans-serif;
+				font-family: 'Lato', Verdana, Geniva, sans-serif;
 				background-color: #ffffff;
 				margin: 0px;
 			}
@@ -35,35 +36,77 @@
 			
 			nav a:hover:not(#active)
 			{
-				background-color: #000000;
+				background-color: #05D3FF;
+				transition: all 500ms linear;
 			}
 			
 			#active
 			{
-				background-color: #d92534;
+				background-color: #029ABF;
 			}
-
-			h1 {
-				margin-top: 50px;
-				text-align: center;
-				font-size: 50px;
-			}
+			
+			/*Applies to every piece in main*/
+			
 			main
 			{
 				margin-left: 10%;
 				margin-right: 10%;
 				color: #666666;
 			}
-			span.bob{
-				padding-top: 30px;
+			
+			/*Front page*/
+			
+			.front-page {
+				background-image: url(../images/amdvintel.jpg);
+				margin-top: 75px;
+				height: 500px;
+				width 100%;
+				z-index: -1;
+				position: relative;
+				color: #029ABF;
 			}
-			img {
-				display: block;
-				margin: 0px auto;
-				margin-top: 125px;
-				height: 50%;
-				width: 50%;
+			
+			.front-page h1 {
+				position: absolute;
+				text-align: center;
+				font-size: 120px;
+				top: 100px;
+				width: 100%;
 			}
+			
+			.front-page p {
+				font-size: 30px;
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 300px;
+			}
+			
+			.front-page .container-fluid {
+				animation-name: fadeInDown;
+				animation-duration: 3s;
+				animation-fill-mode: forwards;
+				animation-timing-fucntion: ease;
+			}
+			
+			@keyframes fadeInDown {
+				0% {
+					transform: translateY(-15px);
+					opacity: 0;
+				}
+				100% {
+					transform: translateY(15px)
+					opacity: 1;
+				}
+			}
+			
+			/*The content*/
+			
+			.content {
+				padding-top: 20px;
+			}
+			/*The footer of the page*/
+			
 			footer {
 				background-color: #f2f2f2;
 				width: 100%;
@@ -79,8 +122,8 @@
 			}
 			
 			footer a:hover {
-				color: #333333;
-				text-decoration: underline;
+				color: #029ABF;
+				transition: all 500ms linear;
 			}
 		</style>
 	</head>
@@ -93,67 +136,73 @@
 			</ul>
 		</nav>
 		<main>
-			<h1>CPU</h1>
-			
-			<h3>Major Suppliers</h3>
-			<p>&sim;There are two major companies that produce CPUs: Intel&reg; and AMD.<img src="../images/amdvintel.jpg" alt="AMD vs Intel" height="90" width="160"/> Currently, Intel&reg; dominates the market as AMD has yet to make a mainstream CPU in 5 years. That is will soon change as AMD is about to launch its new line of CPUs, Zen.&sim;</p>
-			
-			<div>
-				<h3>History of Intel&reg; Microarchitecture (since 2003)</h3>
-					<ol>
-						<li>Pentium M
-								<ul>
-									<li>Enchanced Pentium M</li>
-								</ul>
-							</li>
-						<li>Intel Core
-								<ul>
-									<li>Penryn</li>
-								</ul>
-							</li>
-						<li>Nehalem
-								<ul>
-									<li>Westmere</li>
-								</ul>
-							</li>
-						<li>Sandy Bridge
-								<ul>
-									<li>Ivy Bridge</li>
-								</ul>
-							</li>
-						<li>Haswell
-								<ul>
-									<li>Broadwell</li>
-								</ul>
-							</li>
-						<li>Skylake</li>
-					</ol>
+			<div class="front-page">
+				<div class="container-fluid">
+					<h1>CPU</h1>
+					<p>The brains.</p>
+				</div>
 			</div>
-			<div>
-				<h3>History of AMD Micoarchitecture (since 2003)</h3>
-					<ol>
-						<li>K8 Hammer</li>
-						<li>Family 10h (K10)</li>
-						<li>Fusion Family 12h</li>
-						<li>Bobcat Family 14h
-								<ul>
-									<li>Jaguar Family 16h</li>
-									<li>Puma Family 16h (2nd-gen)</li>
-								</ul>
-							</li>
-						<li>Bulldozer Family 15h
-								<ul>
-									<li>Piledriver Family 15h (2nd-gen)</li>
-									<li>Steamroller Family 15h (3rd-gen)</li>
-									<li>Excavator Family 15h (4th-gen)</li>
-								</ul>
-							</li>
-						<li>Zen</li>
-					</ol>
-			</div><br/>
+			<div class="content">
+				<h3>Major Suppliers</h3>
+				<p>&sim;There are two major companies that produce CPUs: Intel&reg; and AMD. Currently, Intel&reg; dominates the market as AMD has yet to make a mainstream CPU in 5 years. That is will soon change as AMD is about to launch its new line of CPUs, Zen.&sim;</p>
+				
+				<div>
+					<h3>History of Intel&reg; Microarchitecture (since 2003)</h3>
+						<ol>
+							<li>Pentium M
+									<ul>
+										<li>Enchanced Pentium M</li>
+									</ul>
+								</li>
+							<li>Intel Core
+									<ul>
+										<li>Penryn</li>
+									</ul>
+								</li>
+							<li>Nehalem
+									<ul>
+										<li>Westmere</li>
+									</ul>
+								</li>
+							<li>Sandy Bridge
+									<ul>
+										<li>Ivy Bridge</li>
+									</ul>
+								</li>
+							<li>Haswell
+									<ul>
+										<li>Broadwell</li>
+									</ul>
+								</li>
+							<li>Skylake</li>
+						</ol>
+				</div>
+				<div>
+					<h3>History of AMD Micoarchitecture (since 2003)</h3>
+						<ol>
+							<li>K8 Hammer</li>
+							<li>Family 10h (K10)</li>
+							<li>Fusion Family 12h</li>
+							<li>Bobcat Family 14h
+									<ul>
+										<li>Jaguar Family 16h</li>
+										<li>Puma Family 16h (2nd-gen)</li>
+									</ul>
+								</li>
+							<li>Bulldozer Family 15h
+									<ul>
+										<li>Piledriver Family 15h (2nd-gen)</li>
+										<li>Steamroller Family 15h (3rd-gen)</li>
+										<li>Excavator Family 15h (4th-gen)</li>
+									</ul>
+								</li>
+							<li>Zen</li>
+						</ol>
+				</div><br/>
+			</div>
 		</main>
 		<footer>
-			<h4><a href="mailto:jth1024@wildcats.unh.edu">Contact Me</a></h4>
+			<h4><a href="mailto:jth1024@wildcats.unh.edu">Contact</a></h4>
 		</footer>
 	</body>
 </html>

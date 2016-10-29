@@ -4,12 +4,16 @@
 		<title>Assingment #5:Home</title>
 		<meta charset="utf-8"/>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 		<style>
 			body {
-				font-family: Verdana, Geniva, sans-serif;
+				font-family: 'Lato', Verdana, Geniva, sans-serif;
 				background-color: #ffffff;
 				margin: 0px;
 			}
+			
+			/*The nav bar*/
+			
 			nav li {
 				float: left;
 			}
@@ -36,36 +40,144 @@
 			
 			nav a:hover:not(#active)
 			{
-				background-color: #000000;
+				background-color: #05D3FF;
+				transition: all 500ms linear;
 			}
 			
 			#active
 			{
-				background-color: #d92534;
+				background-color: #029ABF;
 			}
-
-			h1 {
-				margin-top: 50px;
-				text-align: center;
-				font-size: 50px;
-			}
+			
+			/*The applied to all content of the page.*/
+			
 			main
 			{
 				margin-left: 10%;
 				margin-right: 10%;
 				color: #666666;
 			}
+			
+			
+			/*The front page of the website*/
+			
+			.front-page {
+				background-image: url(images/blue_pc.jpg);
+				margin-top: 75px;
+				min-height: 900px;
+				min-width 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+				overflow: hidden;
+				z-index: -1;
+				position: relative;
+			}
+			
+			.front-page .container-fluid {
+				animation-name: fadeInDown;
+				animation-duration: 3s;
+				animation-fill-mode: forwards;
+				animation-timing-fucntion: ease;
+			}
+			
+			@keyframes fadeInDown {
+				0% {
+					opacity: 0;
+					transform: translateY(-15px);
+				}
+				100% {
+					transform: translateY(15px)
+					opacity: 1;
+				}
+			}
+			
+			.front-page h1 {
+				position: absolute;
+				text-align: center;
+				color: white;
+				font-size: 120px;
+				top: 225px;
+				width: 100%;
+				/*padding: 200px;*/
+			}
+			
+			.front-page p {
+				color: white;
+				font-size: 30px;
+				text-align: center;
+				position: absolute;
+				width: 100%;
+				top: 425px;
+			}
+			
+			/*The content after the front page*/
+			
+			.first-words {
+				width: 100%;
+				height: 500px;
+				/*position: relative;*/
+				z-index: -1;
+				column-count: 2;
+			}
+			
+			.first-words p {
+				text-align: center;
+				font-size: 45px;
+				margin-top: 0px;
+				margin-bottom: 0px;
+				padding-top: 125px;
+			}
+			
+			#second {
+				color: #029ABF;
+			}
+			
+			/*The fancy background section*/
+			
+			.intro {
+				background: url(images/pretty_pc.jpg) 50% 0 repeat fixed;
+				min-height: 500px;
+				min-width 100%;
+				background-size: cover;
+				background-repeat: no-repeat;
+				overflow: hidden;
+				z-index: -1;
+			}
 
+			.intro h1 {
+				height: 200px;
+				position: relative;
+				top: 125px;
+				width: 100%;
+				color: white;
+				margin-top: 50px;
+				text-align: center;
+				font-size: 50px;
+			}
+			
 			#cover {
 				padding-top: 30px;
 			}
-			img {
-				display: block;
-				margin: 0px auto;
-				margin-top: 125px;
-				height: 50%;
-				width: 50%;
+			
+			/*Line divide*/
+			
+			#line-divide {
+				width: 90%;
+				height: 1px;
+				border: 3px solid #666666;
+				background-color: #666666;
+				margin-top: 55px;
+				margin-left: 5%;
 			}
+			
+			/*The content of the page*/
+			
+			.content {
+				padding-top: 20px;
+			}
+			
+			/*The footer at the bottom of the page.*/
+			
 			footer {
 				background-color: #f2f2f2;
 				width: 100%;
@@ -81,55 +193,20 @@
 			}
 			
 			footer a:hover {
-				color: #333333;
-				text-decoration: underline;
+				color: #029ABF;
+				transition: all 500ms linear;
+				/*text-decoration: underline;*/
 			}
 			
-			.intro {
-				position: relative;
-				background: url(images/pretty_pc.jpg) 50% 0 repeat fixed;
-				min-height: 500px;
-				min-width 100%;
-				background-size: cover;
-				background-repeat: no-repeat;
-				overflow: hidden;
-				z-index: -1;
-				margin-top: 200px;
-			}
 			
-			.intro h1 {
-				height: 200px;
-				position: absolute;
-				top: 150px;
-				width: 100%;
-				color: white;
-			}
 			
-			/*.head {
-				background: url('images/hwc.jpg') center center;
-				position: relative;
-				background-size: cover;
-				background-repeat: no-repeat;
-				width: 100%;
-				position: relative;
-				z-index: -1;
-				min-height: 700px;
-				margin-top: 50px;
-			}*/
 			
-			.mySlides {
-				display: none;
-				width: 100%;
-				height: 600px;
-				z-index: -1;
-			}
-			
-			.w3-animate-right{position:relative;-webkit-animation:animateright 0.4s;animation:animateright 1.0s}
-			@keyframes animateright{from{right:-300px;} to{right:0;}}
 			
 		</style>
 	</head>
 	<body>
+	
+		<!--The nav bar-->
 		<nav >
 			<ul>
 				<li><a id="active" href="index.html">Home</a></li>
@@ -139,84 +216,82 @@
 		</nav>
 		</div>
 		<main>
-			<div class="w3-content w3-section">
-				<img class="mySlides w3-animate-right" src="images/skunkworks.jpg"/>
-				<img class="mySlides w3-animate-right" src="images/hwc.jpg"/>
+		
+			<!--The front page-->
+			<div class="front-page">
+				<div class="container-fluid">
+					<h1>LearnPC.com</h1>
+					<p>Everything you need to know to build your own computer.</p>
+				</div>
 			</div>
 			
-			<script>
-				var myIndex = 0;
-				carousel();
-
-				function carousel() {
-					var i;
-					var x = document.getElementsByClassName("mySlides");
-					for (i = 0; i < x.length; i++) {
-					  x[i].style.display = "none";
-					}
-					myIndex++;
-					if (myIndex > x.length) {myIndex = 1}
-					x[myIndex-1].style.display = "block";
-					setTimeout(carousel, 4000);
-				}
-			</script>
+			<!--The space after the carousel-->
+			<div class="first-words">
+					<p>Want to learn more about what is inside a computer?</p><p id="second">You have come to the right place.</p></div>
+			</div>
 			
+			<!--The image section after the carousel-->
 			<section class="intro" data-type="background" data-speed="10">
 				<div class="container-fluid">
 					<div id="cover">
 						<h1>What Parts Are In A Computer?</h1>
 					</div>
 			</section>
-
-			<h2>Overall List</h2>
-			<ul>
-				<li>CPU</li>
-				<li>Motherboard</li>
-				<li>RAM</li>
-				<li>Powersupply</li>
-				<li>Hard Drive</li>
-				<li>GPU</li>
-				<li>Fans</li>
-				<li>Case</li>
-				<li>Operating System</li>
-			</ul><br/>
 			
-			<h3>CPU</h3>
-				<p>The <strong>CPU</strong>, or <strong>Central Processing Unit</strong>, is the heart of a computer. 
-				This is where all of the bits of information get manipulated. Two major companies who manufature CPUs are Intel and AMD.</p>
+			<div id="line-divide"></div>
 			
-			<h3>Motherboard</h3>
-				<p>The <strong>motherboard</strong> is where every component of the computer comes together. 
-				Each piece connects to the motherboard so that they can interact with each other.</p>
-			
-			<h3>RAM</h3>
-				<p>The <strong>RAM</strong> is the short-term memory of the computer. 
-				Data is temporarily stored there so that it can be quickly accessed. But once the computer is turned off, <em>the memory on the Ram is wiped</em></p>
-			
-			<h3>Powersupply</h3>
-				<p>The <strong>Powersupply</strong> is very self explanatory. This unit sends power to every piece in the computer.</p>
-			
-			<h3>Hard Drive</h3>
-				<p>The <strong>Hard Drive</strong> is the long-term memory of the computer. Data is permenately stored here, 
-				but accessing it is much slower than accessing data from the RAM</p>
-			
-			<h3>GPU</h3>
-				<p>The <strong>GPU</strong>, or <strong>Graphical Processing Unit</strong>, is an extra piece to help the CPU. 
-				This part is dedicated to help process the graphical images seen on a <strong>monitor</strong>.</p>
-			
-			<h3>Fans</h3>
-				<p><strong>Fans</strong> help to keep the parts of the computer cool. 
-				There is always a dedicated fan for the CPU and the GPU that is attached with a <strong>heat spreader</strong>.</p>
-			
-			<h3>Case</h3>
-				<p>The <strong>case</strong> is the unit you store all of the parts in.</p>
-			
-			<h3>Operating System</h3>
-				<p>The <strong>operating system</strong> is the program you use to run all of the parts together. 
-				The two main operating systems are Windows and OSX</p><br/>
+			<!--The content of the page-->
+			<div class="content">
+				<h2>Overall List</h2>
+				<ul>
+					<li>CPU</li>
+					<li>Motherboard</li>
+					<li>RAM</li>
+					<li>Powersupply</li>
+					<li>Hard Drive</li>
+					<li>GPU</li>
+					<li>Fans</li>
+					<li>Case</li>
+					<li>Operating System</li>
+				</ul><br/>
+				
+				<h3>CPU</h3>
+					<p>The <strong>CPU</strong>, or <strong>Central Processing Unit</strong>, is the heart of a computer. 
+					This is where all of the bits of information get manipulated. Two major companies who manufature CPUs are Intel and AMD.</p>
+				
+				<h3>Motherboard</h3>
+					<p>The <strong>motherboard</strong> is where every component of the computer comes together. 
+					Each piece connects to the motherboard so that they can interact with each other.</p>
+				
+				<h3>RAM</h3>
+					<p>The <strong>RAM</strong> is the short-term memory of the computer. 
+					Data is temporarily stored there so that it can be quickly accessed. But once the computer is turned off, <em>the memory on the Ram is wiped</em></p>
+				
+				<h3>Powersupply</h3>
+					<p>The <strong>Powersupply</strong> is very self explanatory. This unit sends power to every piece in the computer.</p>
+				
+				<h3>Hard Drive</h3>
+					<p>The <strong>Hard Drive</strong> is the long-term memory of the computer. Data is permenately stored here, 
+					but accessing it is much slower than accessing data from the RAM</p>
+				
+				<h3>GPU</h3>
+					<p>The <strong>GPU</strong>, or <strong>Graphical Processing Unit</strong>, is an extra piece to help the CPU. 
+					This part is dedicated to help process the graphical images seen on a <strong>monitor</strong>.</p>
+				
+				<h3>Fans</h3>
+					<p><strong>Fans</strong> help to keep the parts of the computer cool. 
+					There is always a dedicated fan for the CPU and the GPU that is attached with a <strong>heat spreader</strong>.</p>
+				
+				<h3>Case</h3>
+					<p>The <strong>case</strong> is the unit you store all of the parts in.</p>
+				
+				<h3>Operating System</h3>
+					<p>The <strong>operating system</strong> is the program you use to run all of the parts together. 
+					The two main operating systems are Windows and OSX</p><br/>
+			</div>
 		</main>
 		<footer>
-			<h4><a href="mailto:jth1024@wildcats.unh.edu">Contact Me</a></h4>
+			<h4><a href="mailto:jth1024@wildcats.unh.edu">Contact</a></h4>
 		</footer>
 	</body>
 </html>
